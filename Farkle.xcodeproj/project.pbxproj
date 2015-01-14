@@ -14,6 +14,7 @@
 		238BD0511A6713FD0055F305 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238BD0501A6713FD0055F305 /* Images.xcassets */; };
 		238BD0541A6713FD0055F305 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238BD0521A6713FD0055F305 /* LaunchScreen.xib */; };
 		238BD0601A6713FD0055F305 /* FarkleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 238BD05F1A6713FD0055F305 /* FarkleTests.m */; };
+		238BD06B1A67142B0055F305 /* DieLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 238BD06A1A67142B0055F305 /* DieLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		238BD0591A6713FD0055F305 /* FarkleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarkleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		238BD05E1A6713FD0055F305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		238BD05F1A6713FD0055F305 /* FarkleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FarkleTests.m; sourceTree = "<group>"; };
+		238BD0691A67142B0055F305 /* DieLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DieLabel.h; path = ../DieLabel.h; sourceTree = "<group>"; };
+		238BD06A1A67142B0055F305 /* DieLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DieLabel.m; path = ../DieLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				238BD0481A6713FD0055F305 /* AppDelegate.m */,
 				238BD04A1A6713FD0055F305 /* ViewController.h */,
 				238BD04B1A6713FD0055F305 /* ViewController.m */,
+				238BD0691A67142B0055F305 /* DieLabel.h */,
+				238BD06A1A67142B0055F305 /* DieLabel.m */,
 				238BD04D1A6713FD0055F305 /* Main.storyboard */,
 				238BD0501A6713FD0055F305 /* Images.xcassets */,
 				238BD0521A6713FD0055F305 /* LaunchScreen.xib */,
@@ -222,6 +227,7 @@
 				238BD04C1A6713FD0055F305 /* ViewController.m in Sources */,
 				238BD0491A6713FD0055F305 /* AppDelegate.m in Sources */,
 				238BD0461A6713FD0055F305 /* main.m in Sources */,
+				238BD06B1A67142B0055F305 /* DieLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
