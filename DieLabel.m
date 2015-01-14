@@ -18,21 +18,29 @@
 }
 */
 
+
+// tell our viewcontroller that we were tapped
+// add this die as a tapped die on the vc
 -(IBAction)onTapped:(UITapGestureRecognizer *)sender
 {
 
 
 }
 
--(void)roll
-    {
+-()
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+// we dont care about telling our viewcontroller that we rolled
+// we just care about setting our text to a random number
+-(void)roll
+{
+    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
         int randomNumber = arc4random_uniform(6)+1;
+        NSLog(@"%i",randomNumber);
+        [self.delegate dieRollWithValue:randomNumber];
 
-        if( )
-    });
+    //});
 }
 
 @end

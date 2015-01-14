@@ -10,12 +10,15 @@
 
 @protocol DiceDelegate <NSObject>
 
+-(void) dieRollWithValue:(int) value;
 
 @end
 
+
 @interface DieLabel : UILabel
-@property (nonatomic, weak) id <DiceDelegate> delegate;
+
 -(void)roll;
 
+@property (nonatomic, weak) id <DiceDelegate> delegate;
 
 @end

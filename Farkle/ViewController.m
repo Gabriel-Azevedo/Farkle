@@ -7,8 +7,22 @@
 //
 
 #import "ViewController.h"
+#import "DieLabel.h"
 
-@interface ViewController ()
+@interface ViewController () <DiceDelegate>
+
+@property (weak, nonatomic) IBOutlet DieLabel *topLeftLabel;
+@property (weak, nonatomic) IBOutlet DieLabel *topMiddleLabel;
+@property (weak, nonatomic) IBOutlet DieLabel *topRightLabel;
+@property (weak, nonatomic) IBOutlet DieLabel *bottomLeftLabel;
+@property (weak, nonatomic) IBOutlet DieLabel *bottomMiddleLabel;
+@property (weak, nonatomic) IBOutlet DieLabel *bottomRightLabel;
+
+@property NSArray *labelsArray;
+
+@property DieLabel *die;
+
+
 
 @end
 
@@ -16,12 +30,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+//    self.die = [[DieLabel alloc] init];
+    [self createLabelsArray];
+//    self.die.delegate = self;
+    for (DieLabel *label in self.labelsArray)
+    {
+        label.delegate = self;
+    }
+
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+//method that tells all labels to roll
+//
+
+-(void)dieRollWithValue:(int)value
+{
+    NSLog(@"here");
+    for (DieLabel *label in self.labelsArray)
+    {
+        [self.die roll];
+        label.text = [NSString stringWithFormat:@"%i", value];
+        NSLog(@"%d", value);
+    }
 }
+
+-(void)createLabelsArray
+{
+    self.labelsArray = [[NSArray alloc] initWithObjects:self.topLeftLabel, self.topMiddleLabel, self.topRightLabel, self.bottomLeftLabel, self.bottomMiddleLabel, self.bottomRightLabel, nil];
+}
+
+
 
 @end

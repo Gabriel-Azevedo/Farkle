@@ -26,6 +26,16 @@
                                     <outletCollection property="gestureRecognizers" destination="M0E-1D-dQc" appends="YES" id="npH-fz-MCq"/>
                                 </connections>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdz-CX-nuC" customClass="DieLabel">
+                                <rect key="frame" x="120" y="98" width="80" height="80"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mk2-gC-GEi" appends="YES" id="Vi6-AQ-XFT"/>
+                                </connections>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNa-UT-mb6" customClass="DieLabel">
                                 <rect key="frame" x="224" y="98" width="80" height="80"/>
                                 <gestureRecognizers/>
@@ -66,19 +76,23 @@
                                     <outletCollection property="gestureRecognizers" destination="rwE-S5-bJ2" appends="YES" id="zGt-cu-3QV"/>
                                 </connections>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdz-CX-nuC" customClass="DieLabel">
-                                <rect key="frame" x="120" y="98" width="80" height="80"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mk2-gC-GEi" appends="YES" id="Vi6-AQ-XFT"/>
-                                </connections>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWN-UD-ujC">
+                                <rect key="frame" x="137" y="357" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomLeftLabel" destination="3gu-2J-PcF" id="J2j-oD-RlW"/>
+                        <outlet property="bottomMiddleLabel" destination="3cp-Il-3hB" id="xFX-c8-gHe"/>
+                        <outlet property="bottomRightLabel" destination="b8r-yJ-SVL" id="x4b-Xr-Tov"/>
+                        <outlet property="topLeftLabel" destination="d9W-jh-Fk8" id="Rck-Ch-VTs"/>
+                        <outlet property="topMiddleLabel" destination="Xdz-CX-nuC" id="AKO-Ta-Brk"/>
+                        <outlet property="topRightLabel" destination="xNa-UT-mb6" id="vl4-pf-xrl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="M0E-1D-dQc" userLabel="Tap Gesture Recognizer (1)">
@@ -86,11 +100,31 @@
                         <action selector="onTapped:" destination="d9W-jh-Fk8" id="GXX-9P-G5O"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="mk2-gC-GEi" userLabel="Tap Gesture Recognizer (2)"/>
-                <tapGestureRecognizer id="8wC-hm-g48" userLabel="Tap Gesture Recognizer (3)"/>
-                <tapGestureRecognizer id="gKt-fL-0EY" userLabel="Tap Gesture Recognizer (4)"/>
-                <tapGestureRecognizer id="rwE-S5-bJ2" userLabel="Tap Gesture Recognizer (5)"/>
-                <tapGestureRecognizer id="JpJ-YV-D5i" userLabel="Tap Gesture Recognizer (6)"/>
+                <tapGestureRecognizer id="mk2-gC-GEi" userLabel="Tap Gesture Recognizer (2)">
+                    <connections>
+                        <action selector="onTapped:" destination="Xdz-CX-nuC" id="dBz-5Y-ppa"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="8wC-hm-g48" userLabel="Tap Gesture Recognizer (3)">
+                    <connections>
+                        <action selector="onTapped:" destination="xNa-UT-mb6" id="OcN-6z-B6d"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="gKt-fL-0EY" userLabel="Tap Gesture Recognizer (4)">
+                    <connections>
+                        <action selector="onTapped:" destination="3gu-2J-PcF" id="5yN-bb-y8z"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="rwE-S5-bJ2" userLabel="Tap Gesture Recognizer (5)">
+                    <connections>
+                        <action selector="onTapped:" destination="3cp-Il-3hB" id="4r7-Wq-Uth"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="JpJ-YV-D5i" userLabel="Tap Gesture Recognizer (6)">
+                    <connections>
+                        <action selector="onTapped:" destination="b8r-yJ-SVL" id="lTe-MU-TAv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="181" y="328"/>
         </scene>
