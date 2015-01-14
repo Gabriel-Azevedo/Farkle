@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol DiceDelegate <NSObject>
+
+
+@end
+
 @interface DieLabel : UILabel
+@property (nonatomic, weak) id <DiceDelegate> delegate;
+-(void)roll;
+
 
 @end

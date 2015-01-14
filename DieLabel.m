@@ -21,6 +21,18 @@
 -(IBAction)onTapped:(UITapGestureRecognizer *)sender
 {
 
+
+}
+
+-(void)roll
+    {
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+        int randomNumber = arc4random_uniform(6)+1;
+
+        if( )
+    });
 }
 
 @end
