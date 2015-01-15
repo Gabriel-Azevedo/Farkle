@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property NSMutableSet *dice;
+@property NSMutableSet *allWinningSets;
+
 
 
 @end

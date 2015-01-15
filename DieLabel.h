@@ -10,8 +10,6 @@
 
 @protocol DiceDelegate <NSObject>
 
--(void) dieRollWithValue:(int) value;
-
 @end
 
 
@@ -19,6 +17,9 @@
 
 -(void)roll;
 
+
 @property (nonatomic, weak) id <DiceDelegate> delegate;
+
+@property NSMutableArray *selectedlabels;
 
 @end
