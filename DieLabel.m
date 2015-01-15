@@ -12,6 +12,8 @@
 
 @interface DieLabel()
 
+@property UIViewController *parentVC;
+
 @end
 
 
@@ -25,9 +27,7 @@
 if ([self.text isEqualToString:@"1"] || [self.text isEqualToString:@"5"])
     {
         self.backgroundColor = [UIColor orangeColor];
-        [self.selectedlabels addObject:self];
-        
-
+        self.isSelected = true;
     }
 
 }
@@ -35,12 +35,11 @@ if ([self.text isEqualToString:@"1"] || [self.text isEqualToString:@"5"])
 
 -(void)roll
 {
-    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        int randomNumber = arc4random_uniform(6)+1;
-
+    if (self.isSelected == false)
+    {
+    int randomNumber = arc4random_uniform(6)+1;
     self.text = [NSString stringWithFormat:@"%i", randomNumber];
-
-    //});
+    }
 }
 
 @end

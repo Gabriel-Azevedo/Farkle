@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 @property NSMutableSet *dice;
 @property NSMutableSet *allWinningSets;
+@property NSMutableSet *selectedLabels;
 
 
 

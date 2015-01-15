@@ -10,6 +10,8 @@
 
 @protocol DiceDelegate <NSObject>
 
+
+
 @end
 
 
@@ -19,7 +21,7 @@
 
 
 @property (nonatomic, weak) id <DiceDelegate> delegate;
+@property BOOL isSelected;
 
-@property NSMutableArray *selectedlabels;
 
 @end

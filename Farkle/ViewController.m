@@ -57,9 +57,8 @@
 
     self.allWinningSets = [[NSMutableSet alloc] initWithObjects:self.threeOnes, self.threeTwos, self.threeThrees, self.threeFours, self.threeFives, self.threeSixes, nil];
 
-
-//    self.die.delegate = self;
     for (DieLabel *label in self.labelsArray)
+
     {
         label.delegate = self;
     }
@@ -77,16 +76,8 @@
 {
     for (DieLabel *label in self.labelsArray)
     {
-        for (DieLabel *selected in label.selectedlabels)
-        {
-            if ([label.text isEqualToString:selected.text])
-            {
-                [self.dice removeObject:label.text];
-            }
-        }
         [label roll];
         [self.dice addObject:label.text];
-        label.backgroundColor = nil;
     }
 }
 
