@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "DieLabel.h"
 
-@interface ViewController () <DiceDelegate>
+@interface ViewController () <DieLabelDelegate, UIGestureRecognizerDelegate>
 
 //Properties for the dice labels
 @property (weak, nonatomic) IBOutlet DieLabel *topLeftLabel;
@@ -53,7 +53,6 @@
     self.threeFours = [[NSMutableSet alloc]initWithObjects: @"4",@"4",@"4", nil];
     self.threeFives = [[NSMutableSet alloc]initWithObjects: @"5",@"5",@"5", nil];
     self.threeSixes = [[NSMutableSet alloc]initWithObjects: @"6",@"6",@"6", nil];
-    
 
     self.allWinningSets = [[NSMutableSet alloc] initWithObjects:self.threeOnes, self.threeTwos, self.threeThrees, self.threeFours, self.threeFives, self.threeSixes, nil];
 
@@ -69,15 +68,21 @@
     self.labelsArray = [[NSArray alloc] initWithObjects:self.topLeftLabel, self.topMiddleLabel, self.topRightLabel, self.bottomLeftLabel, self.bottomMiddleLabel, self.bottomRightLabel, nil];
 }
 
+-(void) onLabelTapped:(UILabel *)label
+{
+
+    [self.dice addObject:label.text];
+}
 
 //method that tells all labels to roll
-//
 - (IBAction)onRollButtonPressed:(UIButton *)sender
 {
     for (DieLabel *label in self.labelsArray)
     {
-        [label roll];
-        [self.dice addObject:label.text];
+        if (label.backgroundColor == nil)
+        {
+            [label roll];
+        }
     }
 }
 

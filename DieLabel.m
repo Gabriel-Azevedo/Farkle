@@ -10,9 +10,8 @@
 #import "ViewController.h"
 
 
-@interface DieLabel()
+@interface DieLabel() <UIGestureRecognizerDelegate>
 
-@property UIViewController *parentVC;
 
 @end
 
@@ -22,14 +21,11 @@
 
 // tell our viewcontroller that we were tapped
 // add this die as a tapped die on the vc
+
+
 -(IBAction)onTapped:(UITapGestureRecognizer *)sender
 {
-if ([self.text isEqualToString:@"1"] || [self.text isEqualToString:@"5"])
-    {
-        self.backgroundColor = [UIColor orangeColor];
-        self.isSelected = true;
-    }
-
+    [self.delegate onLabelTapped:self];
 }
 
 

@@ -8,19 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol DiceDelegate <NSObject>
+@protocol DieLabelDelegate <NSObject>
 
-
+-(void)onLabelTapped:(UILabel *) label;
 
 @end
 
 
-@interface DieLabel : UILabel
+@interface DieLabel: UILabel
 
 -(void)roll;
 
-
-@property (nonatomic, weak) id <DiceDelegate> delegate;
+@property (nonatomic, weak) id <DieLabelDelegate> delegate;
 @property BOOL isSelected;
 
 
